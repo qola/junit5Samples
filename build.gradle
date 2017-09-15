@@ -1,0 +1,68 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+        swaggerVersion = '2.5.0'
+		junit4Version        = '4.12'
+		junitVintageVersion  = '4.12.0'
+		junitPlatformVersion = '1.0.0'
+		junitJupiterVersion  = '5.0.0'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+jar {
+	baseName = 'junit5-samples'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "http://repo.daumkakao.io" }
+	maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-aop")
+	compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-devtools")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	compile("io.springfox:springfox-swagger2:${swaggerVersion}")
+	compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
+    compile("io.springfox:springfox-bean-validators:${swaggerVersion}")
+
+	compile("com.getsentry.raven:raven-logback:8.0.2")
+    compile("commons-io:commons-io:2.4")
+
+	testCompile('com.h2database:h2')
+
+	//junit5
+	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+	testCompile("junit:junit:${junit4Version}")
+	testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+	testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+
+	//from jitpack.io
+	testCompile('com.github.sbrannen:spring-test-junit5:1.0.0')
+
+}
+
+tasks.withType(Test) {
+    // Show that tests are run in the command-line output
+    testLogging {
+        events 'started', 'passed'
+    }
+}

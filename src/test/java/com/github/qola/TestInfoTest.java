@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("7. TestInfo Test")
 public class TestInfoTest {
     TestInfoTest(TestInfo testInfo) {
-        assertEquals("6. TestInfo Test", testInfo.getDisplayName());
+        assertEquals("7. TestInfo Test", testInfo.getDisplayName());
     }
 
     @BeforeEach

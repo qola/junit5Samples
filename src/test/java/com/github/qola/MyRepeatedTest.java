@@ -41,8 +41,4 @@ public class MyRepeatedTest {
         assertEquals(testInfo.getDisplayName(), "Details... :: repetition 1 of 1");
     }
 
-    @RepeatedTest(value = 5, name = "Wiederholung {currentRepetition} von {totalRepetitions}")
-    void repeatedTestInGerman() {
-        // ...
-    }
 }

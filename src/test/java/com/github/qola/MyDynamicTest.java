@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 /**
  * Created by Donny on 2017. 9. 18..
  */
-@DisplayName("12. Dynamic Test")
+@DisplayName("11. Dynamic Test")
 public class MyDynamicTest {
 
     @TestFactory

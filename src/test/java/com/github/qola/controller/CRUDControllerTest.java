@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created by Donny on 2017. 9. 15..
  */
 @ActiveProfiles("test")
-@DisplayName("13. SpringBoot Integration Test")
+@DisplayName("14. SpringBoot Integration Test")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CRUDControllerTest {

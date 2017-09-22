@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 /**
  * Created by Donny on 2017. 9. 18..
  */
-@DisplayName("3. Assertions Test")
+@DisplayName("3. Assumptions Test")
 public class AssumptionsTest {
 
     @Test
@@ -23,7 +23,8 @@ public class AssumptionsTest {
     void testOnlyOnDeveloperWorkstation() {
         assumeTrue("DEV".equals(System.getenv("ENV")),
                 () -> "Aborting test: not on developer workstation");
-        // remainder of test
+
+        System.out.println("assumeTrue() 이후로 실행되지 않는다");
     }
 
     @Test
@@ -36,6 +37,7 @@ public class AssumptionsTest {
 
         // perform these assertions in all environments
         assertEquals("a string", "a string");
+        System.out.println("모든 환경에서 테스트가 수행 된다. ");
     }
 
 }

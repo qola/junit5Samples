@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by Donny on 2017. 9. 19..
  */
 @SpringBootMockTest
-@DisplayName("14. SpringBoot Mock Test")
+@DisplayName("13. SpringBoot Mock Test with Custom Annotation")
 public class MySpringBootMockTest {
     @MockBean HelloService helloService;
 
